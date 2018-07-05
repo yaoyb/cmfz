@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91fe5b61-44f6-408c-a84d-20a178aee070" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/java/com/baizhi/cmfz/controller/ManagerController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/java/com/baizhi/cmfz/util/NewValidateCodeUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cmfz/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../cmfz/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/java/com/baizhi/cmfz/dao/ManagerDao.java" afterPath="$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/java/com/baizhi/cmfz/dao/ManagerDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/java/com/baizhi/cmfz/service/ManagerService.java" afterPath="$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/java/com/baizhi/cmfz/service/ManagerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/java/com/baizhi/cmfz/service/impl/ManagerServiceImpl.java" afterPath="$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/java/com/baizhi/cmfz/service/impl/ManagerServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/resources/applicationContext-mvc.xml" afterPath="$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/resources/applicationContext-mvc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/resources/applicationContext.xml" afterPath="$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/resources/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/resources/com/baizhi/cmfz/mapper/ManagerMapper.xml" afterPath="$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/resources/com/baizhi/cmfz/mapper/ManagerMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/webapp/login.jsp" afterPath="$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/webapp/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cmfz/cmfz-admin/src/test/java/test.java" afterPath="$PROJECT_DIR$/../cmfz/cmfz-admin/src/test/java/test.java" />
-    </list>
+    <list default="true" id="91fe5b61-44f6-408c-a84d-20a178aee070" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/../cmfz/out/" />
     <ignored path="$PROJECT_DIR$/../cmfz/target/" />
     <ignored path="$PROJECT_DIR$/../cmfz/cmfz-admin/target/" />
@@ -655,7 +642,7 @@
       <workItem from="1530718301874" duration="790000" />
       <workItem from="1530749842479" duration="893000" />
       <workItem from="1530750832695" duration="808000" />
-      <workItem from="1530754166849" duration="2336000" />
+      <workItem from="1530754166849" duration="2419000" />
     </task>
     <task id="LOCAL-00001" summary="初始化框架">
       <created>1530704656861</created>
@@ -671,7 +658,14 @@
       <option name="project" value="LOCAL" />
       <updated>1530709925586</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="登录功能完成">
+      <created>1530756889549</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1530756889549</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -707,7 +701,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17406000" />
+    <option name="totallyTimeSpent" value="17489000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="2" width="1378" height="733" extended-state="0" />
@@ -815,7 +809,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="初始化框架" />
     <MESSAGE value="登录service完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="登录service完成" />
+    <MESSAGE value="登录功能完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="登录功能完成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

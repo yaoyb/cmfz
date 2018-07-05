@@ -1,5 +1,7 @@
 import com.baizhi.cmfz.dao.ManagerDao;
+import com.baizhi.cmfz.dao.MenuDao;
 import com.baizhi.cmfz.service.ManagerService;
+import com.baizhi.cmfz.service.MenuService;
 import com.baizhi.cmfz.service.impl.ManagerServiceImpl;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -12,15 +14,21 @@ public class test {
 
     @Test
     public void aaa(){
-//        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
-       /* ManagerService managerService = (ManagerService) applicationContext.getBean("managerServiceImpl");
-        Manager manager = managerService.queryManagerByName("吴","123456");
-        System.out.println(manager);*/
-        ApplicationContext ac = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
-//        ManagerDao md = (ManagerDao) ac.getBean("managerDao");
-//        System.out.println(md.selectOne("1000"));
 
-        ManagerService ms = (ManagerService) ac.getBean("managerServiceImpl");
-        System.out.println(ms.queryOne("zs","12"));
+        ApplicationContext ac = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
+
+//        ManagerDao md = (ManagerDao) ac.getBean("managerDao");
+//        System.out.println(md.selectOne("zs"));
+
+//        ManagerService ms = (ManagerService) ac.getBean("managerServiceImpl");
+//        System.out.println(ms.queryOne("zs","12"));
+
+//        MenuDao md = (MenuDao) ac.getBean("menuDao");
+//        System.out.println(md.selectAllFirst());
+//        System.out.println(md.selectSecond("100"));
+
+//        MenuService ms = (MenuService) ac.getBean("menuServiceImpl");
+//        System.out.println(ms.querySecond("101"));
+//        System.out.println(ms.queryAllFirst());
     }
 }

@@ -20,8 +20,8 @@ public class ManagerServiceImpl implements ManagerService {
 
     @Override
     @Transactional(propagation = Propagation.SUPPORTS,readOnly = true)
-    public Manager queryOne(String mgr_id,String mgr_pwd) {
-        Manager mgr = md.selectOne(mgr_id);
+    public Manager queryOne(String mgr_name,String mgr_pwd) {
+        Manager mgr = md.selectOne(mgr_name);
         if(mgr.getMgr_pwd().equals(mgr_pwd)){
             return mgr;
         }

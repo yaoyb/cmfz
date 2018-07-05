@@ -7,5 +7,5 @@ import com.baizhi.cmfz.entity.Manager;
  * Created by 姚亚博 on 2018/7/4.
  */
 public interface ManagerService {
-    public Manager queryOne(String mgr_id,String mgr_pwd);
+    public Manager queryOne(String mgr_name,String mgr_pwd);
 }

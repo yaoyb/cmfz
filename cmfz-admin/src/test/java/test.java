@@ -21,6 +21,6 @@ public class test {
 //        System.out.println(md.selectOne("1000"));
 
         ManagerService ms = (ManagerService) ac.getBean("managerServiceImpl");
-        System.out.println(ms.queryOne("1000","123"));
+        System.out.println(ms.queryOne("zs","12"));
     }
 }

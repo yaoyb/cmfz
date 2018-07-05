@@ -16,23 +16,43 @@
 	<script type="text/javascript">
 	
 		$(function(){
+
+            var str = "${cookie.name.value}";
+            var newStr = decodeURI(str);
+            $("#name").val(newStr);
+
 			//点击更换验证码：
-			$("#captchaImage").click(function(){//点击更换验证码
+			/*$("#captchaImage").click(function(){//点击更换验证码
 				alert("自己做");
-			});
+			});*/
 			
 			//  form 表单提交
-			$("#loginForm").bind("submit",function(){
-				alert("自己做");
-				return false;
-			});
+
+            $("#loginForm").bind("submit",function(){
+                var name=$("#name").val();
+                var pwd=$("#password").val();
+                var code=$("#enCode").val();
+                if(name==""){
+                    alert("用户名不能为空！");
+                }
+                if(pwd==""){
+                    alert("密码不能为空！");
+                }
+                if(code==""){
+                    alert("验证码不能为空！");
+                }
+                if(name!=""&&pwd!=""&&code!=""){
+                    return true;
+                }
+                return false;
+            });
 		});
 	</script>
 </head>
 <body>
 	
 		<div class="login">
-			<form id="loginForm" action="../back/index.html" method="post" >
+			<form id="loginForm" action="/cmfz/manager/login.do" method="post" >
 				
 				<table>
 					<tbody>
@@ -44,7 +64,7 @@
 								用户名:
 							</th>
 							<td>
-								<input type="text"  name="user.name" class="text" value="xxx" maxlength="20"/>
+								<input id="name" type="text"  name="name" class="text" value="" maxlength="20"/>
 							</td>
 					  </tr>
 					  <tr>
@@ -52,7 +72,7 @@
 								密&nbsp;&nbsp;&nbsp;码:
 							</th>
 							<td>
-								<input type="password" name="user.password" class="text" value="xxx" maxlength="20" autocomplete="off"/>
+								<input type="password" name="password" class="text" value="" maxlength="20" autocomplete="off"/>
 							</td>
 					  </tr>
 					
@@ -61,7 +81,7 @@
 							<th>验证码:</th>
 							<td>
 								<input type="text" id="enCode" name="enCode" class="text captcha" maxlength="4" autocomplete="off"/>
-								<img id="captchaImage" class="captchaImage" src="img/captcha.jpg" title="点击更换验证码"/>
+								<img id="captchaImage" class="captchaImage" onclick="document.getElementById('captchaImage').src='vcode.do?time-'+(new Date()).getTime();" src="/cmfz/manager/getVcode.do" title="点击更换验证码"/>
 							</td>
 						</tr>					
 					<tr>
@@ -73,7 +93,7 @@
 						</th>
 						<td>
 							<label>
-								<input type="checkbox" id="isRememberUsername" value="true"/> 记住用户名
+								<input type="checkbox" id="isRememberUsername" value="true" name="checkbox"/> 记住用户名
 							</label>
 						</td>
 					</tr>
@@ -81,7 +101,8 @@
 						<td>&nbsp;</td>
 						<th>&nbsp;</th>
 						<td>
-							<input type="button" class="homeButton" value="" onclick="location.href='/'"><input type="submit" class="loginButton" value="登录">
+							<input type="button" class="homeButton" value="" onclick="location.href='/'">
+							<input type="submit" class="loginButton" value="登录">
 						</td>
 					</tr>
 				</tbody></table>

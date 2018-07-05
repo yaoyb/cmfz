@@ -45,7 +45,7 @@ public class ManagerController {
                     response.addCookie(c1);
                     response.addCookie(c2);
                 }
-                return "index";
+                return "main/main";
             }
         }
         return "login";

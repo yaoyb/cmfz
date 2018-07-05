@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	pageEncoding="utf-8" isELIgnored="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,21 +10,18 @@
 <script type="text/javascript" src="../js/jquery.min.js"></script>   
 <script type="text/javascript" src="../js/jquery.easyui.min.js"></script>  
 <script type="text/javascript" src="../js/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="../js/datagrid-detailview.js"></script>
 <script type="text/javascript">
 
 	$(function(){
-//	    $("#a").click(function () {
-//            $("#aa").append("<div title='aaa' data-options='iconCls:"icon-reload",selected:true' style='padding:10px;'>content2</div>");
-//			$("#aa").append("<p>123143</p>");
-//			alert("1111");
-//        });
 
         $.ajax({
 			type:"POST",
 			url:"/cmfz/menu/showFirst.do",
+            async: false,
 			success:function (menuList) {
 
-				jQuery.each(menuList,function (index,value) {
+				$.each(menuList,function (index,value) {
 
                     var firstcontent="";
 
@@ -36,8 +32,8 @@
                         async: false,
 						success:function (data) {
                             firstcontent+="<ul>";
-                            jQuery.each(data,function (num,second) {
-                                firstcontent+="<li><div><a target='mainFrame' href=''>"+second.menu_name+"</a></div></li>";
+                            $.each(data,function (num,second) {
+                                firstcontent+="<li style=\"list-style-type:none;\"><a class=\"easyui-linkbutton\" data-options=\"plain:true,iconCls:'"+second.menu_icon+"'\" onclick=\"addpage('"+second.menu_name+"','"+second.menu_url+"')\">"+second.menu_name+"</a></li>";
                             });
                             firstcontent+="</ul>";
                         }
@@ -46,13 +42,29 @@
                     $("#aa").accordion('add',{
                         title: value.menu_name,
                         content: firstcontent,
+						iconCls:value.menu_icon,
                         selected: false
                     });
                 })
             }
 		});
 	});
-	
+
+   function addpage(tt,path) {
+        //首先判断原选项卡中是否含有已点击的选项
+
+        var result = $("#tab").tabs("exists",tt);
+        //如果已经含有，跳转
+        if(result){
+            $("#tab").tabs("select",tt);
+        }else{//如果没有，新建
+            $("#tab").tabs("add",{
+                title:tt,
+                href:"${pageContext.request.contextPath}/main/"+path,
+                closable:true,
+            });
+        }
+    }
 </script>
 
 </head>
@@ -68,18 +80,10 @@
     <div id="bb" data-options="region:'west',title:'导航菜单',split:true" style="width:220px;">
     	<div id="aa" class="easyui-accordion" data-options="fit:true">
 
-			<%--<c:forEach items="${sessionScope.MenuFirst}" var="menu">--%>
-				<%--<div title="${menu.menu_name}" data-options="iconCls:'icon-reload',selected:true" style="padding:10px;">--%>
-					<%--content2--%>
-				<%--</div>--%>
-				<%--<p>${menu.menu_name}</p>--%>
-			<%--</c:forEach>--%>
-
-
 		</div>  
     </div>   
     <div data-options="region:'center'">
-    	<div id="tt" class="easyui-tabs" data-options="fit:true,narrow:true,pill:true">   
+    	<div id="tab" class="easyui-tabs" data-options="fit:true,narrow:true,pill:true">
 		    <div title="主页" data-options="iconCls:'icon-neighbourhood',"  style="background-image:url(image/shouye.jpg);background-repeat: no-repeat;background-size:100% 100%;"></div>
 		</div>  
     </div>   

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91fe5b61-44f6-408c-a84d-20a178aee070" name="Default" comment="" />
+    <list default="true" id="91fe5b61-44f6-408c-a84d-20a178aee070" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../cmfz/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../cmfz/.idea/workspace.xml" />
+    </list>
     <ignored path="$PROJECT_DIR$/../cmfz/out/" />
     <ignored path="$PROJECT_DIR$/../cmfz/target/" />
     <ignored path="$PROJECT_DIR$/../cmfz/cmfz-admin/target/" />
@@ -16,21 +18,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/webapp/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1544">
-              <caret line="77" column="16" lean-forward="true" selection-start-line="77" selection-start-column="16" selection-end-line="77" selection-end-column="16" />
+            <state relative-caret-position="325">
+              <caret line="61" column="20" lean-forward="false" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ManagerController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ManagerController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/java/com/baizhi/cmfz/controller/ManagerController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="43" column="36" lean-forward="true" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
+            <state relative-caret-position="192">
+              <caret line="21" column="27" lean-forward="true" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -131,7 +133,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -148,6 +149,7 @@
       </pane>
       <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -642,7 +644,8 @@
       <workItem from="1530718301874" duration="790000" />
       <workItem from="1530749842479" duration="893000" />
       <workItem from="1530750832695" duration="808000" />
-      <workItem from="1530754166849" duration="2419000" />
+      <workItem from="1530754166849" duration="2519000" />
+      <workItem from="1530757123488" duration="167000" />
     </task>
     <task id="LOCAL-00001" summary="初始化框架">
       <created>1530704656861</created>
@@ -665,7 +668,14 @@
       <option name="project" value="LOCAL" />
       <updated>1530756889549</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="登录功能完成">
+      <created>1530756960778</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1530756960778</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -701,14 +711,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17489000" />
+    <option name="totallyTimeSpent" value="17756000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="2" width="1378" height="733" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.327212" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295082" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32888147" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -719,7 +728,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295082" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295082" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21471927" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21775417" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -731,6 +740,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.327212" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
@@ -821,6 +831,22 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/webapp/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/java/com/baizhi/cmfz/controller/ManagerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1032">
+          <caret line="43" column="36" lean-forward="true" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/resources/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
@@ -907,13 +933,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/java/com/baizhi/cmfz/controller/GetValidateCodeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/java/com/baizhi/cmfz/controller/GetValidateCodeController.java" />
     <entry file="file://$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/java/com/baizhi/cmfz/util/NewValidateCodeUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
@@ -965,13 +985,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/java/com/baizhi/cmfz/controller/GetValidateCodeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/java/com/baizhi/cmfz/controller/GetValidateCodeController.java" />
     <entry file="file://$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/java/com/baizhi/cmfz/util/NewValidateCodeUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="768">
@@ -1013,7 +1027,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1139,26 +1152,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/java/com/baizhi/cmfz/controller/GetValidateCodeController.java">
+    <entry file="file://$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/java/com/baizhi/cmfz/controller/GetValidateCodeController.java" />
+    <entry file="file://$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/webapp/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="24" selection-end-column="5" />
+        <state relative-caret-position="325">
+          <caret line="61" column="20" lean-forward="false" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/java/com/baizhi/cmfz/controller/ManagerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="43" column="36" lean-forward="true" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../cmfz/cmfz-admin/src/main/webapp/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1544">
-          <caret line="77" column="16" lean-forward="true" selection-start-line="77" selection-start-column="16" selection-end-line="77" selection-end-column="16" />
+        <state relative-caret-position="192">
+          <caret line="21" column="27" lean-forward="true" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
           <folding />
         </state>
       </provider>

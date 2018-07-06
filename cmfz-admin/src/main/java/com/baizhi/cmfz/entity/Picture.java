@@ -1,5 +1,7 @@
 package com.baizhi.cmfz.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 import java.util.Date;
 
 /**
@@ -8,6 +10,7 @@ import java.util.Date;
 public class Picture {
     private String picture_id;
     private String picture_path;
+    @JSONField(format = "yyyy-MM-dd hh:mm:ss")
     private Date picture_date;
     private String picture_description;
     private String picture_status;

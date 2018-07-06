@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "../mybatis-3-mapper.dtd" >
 <mapper namespace="com.baizhi.cmfz.dao.ManagerDao">
-     <select id="selectOne" resultType="Manager">
+    <resultMap id="managerMap" type="Manager">
+        <id property="mgrId" column="mgr_id" ></id>
+        <result property="mgrName" column="mgr_name"></result>
+        <result property="mgrPwd" column="mgr_pwd"></result>
+        <result property="salt" column="salt"></result>
+        <result property="mgrStatus" column="mgr_status"></result>
+    </resultMap>
+     <select id="selectOne" resultMap="managerMap">
          select * from manager where mgr_name=#{0}
      </select>
 </mapper>

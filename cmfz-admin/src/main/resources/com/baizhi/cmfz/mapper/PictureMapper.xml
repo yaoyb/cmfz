@@ -1,26 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "../mybatis-3-mapper.dtd" >
 <mapper namespace="com.baizhi.cmfz.dao.PictureDao">
-     <select id="selectAll" resultType="Picture">
+
+    <resultMap id="PictureList" type="Picture">
+        <id property="pictureId" column="picture_id" ></id>
+        <result property="picturePath" column="picture_path"></result>
+        <result property="pictureDate" column="picture_date"></result>
+        <result property="pictureDescription" column="picture_description"></result>
+        <result property="pictureStatus" column="picture_status"></result>
+    </resultMap>
+
+    <select id="selectAll" resultMap="PictureList">
          select * from picture  LIMIT #{begin}, #{size}
      </select>
 
     <insert id="insert">
         INSERT INTO picture VALUES(
-            #{picture.picture_id},
-            #{picture.picture_path},
-            #{picture.picture_date},
-            #{picture.picture_description},
-            #{picture.picture_status})
+            #{picture.pictureId},
+            #{picture.picturePath},
+            #{picture.pictureDate},
+            #{picture.pictureDescription},
+            #{picture.pictureStatus})
     </insert>
 
     <update id="updata">
         UPDATE picture SET
-            picture_path=#{picture.picture_path},
-            picture_date=#{picture.picture_date},
-            picture_description=#{picture.picture_description},
-            picture_status=#{picture.picture_status}
-        where picture_id=#{picture.picture_id}
+            picture_path=#{picture.picturePath},
+            picture_date=#{picture.pictureDate},
+            picture_description=#{picture.pictureDescription},
+            picture_status=#{picture.pictureStatus}
+        where picture_id=#{picture.pictureId}
     </update>
 
     <delete id="delete">

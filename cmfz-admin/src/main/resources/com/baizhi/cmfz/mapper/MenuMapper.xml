@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "../mybatis-3-mapper.dtd" >
 <mapper namespace="com.baizhi.cmfz.dao.MenuDao">
-
-    <select id="selectAllFirst" resultType="Menu">
+    <resultMap id="menuMap" type="Menu">
+        <id property="id" column="id" ></id>
+        <result property="menuName" column="menu_name"></result>
+        <result property="menuIcon" column="menu_icon"></result>
+        <result property="menuUrl" column="menu_url"></result>
+        <result property="menuLevel" column="menu_level"></result>
+        <result property="menuParentId" column="menu_parent_id"></result>
+    </resultMap>
+    <select id="selectAllFirst" resultMap="menuMap">
          select * from menu where menu_level='1'
      </select>
 
-    <select id="selectSecond" resultType="Menu">
+    <select id="selectSecond" resultMap="menuMap">
         select * from menu where menu_parent_id=#{0}
     </select>
 

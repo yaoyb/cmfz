@@ -5,22 +5,22 @@ package com.baizhi.cmfz.entity;
  */
 public class Menu {
     private String id;
-    private String menu_name;
-    private String menu_icon;
-    private String menu_url;
-    private String menu_level;
-    private String menu_parent_id;
+    private String menuName;
+    private String menuIcon;
+    private String menuUrl;
+    private String menuLevel;
+    private String menuParentId;
 
     public Menu() {
     }
 
-    public Menu(String id, String menu_name, String menu_icon, String menu_url, String menu_level, String menu_parent_id) {
+    public Menu(String id, String menuName, String menuIcon, String menuUrl, String menuLevel, String menuParentId) {
         this.id = id;
-        this.menu_name = menu_name;
-        this.menu_icon = menu_icon;
-        this.menu_url = menu_url;
-        this.menu_level = menu_level;
-        this.menu_parent_id = menu_parent_id;
+        this.menuName = menuName;
+        this.menuIcon = menuIcon;
+        this.menuUrl = menuUrl;
+        this.menuLevel = menuLevel;
+        this.menuParentId = menuParentId;
     }
 
     public String getId() {
@@ -31,55 +31,55 @@ public class Menu {
         this.id = id;
     }
 
-    public String getMenu_name() {
-        return menu_name;
+    public String getMenuName() {
+        return menuName;
     }
 
-    public void setMenu_name(String menu_name) {
-        this.menu_name = menu_name;
+    public void setMenuName(String menuName) {
+        this.menuName = menuName;
     }
 
-    public String getMenu_icon() {
-        return menu_icon;
+    public String getMenuIcon() {
+        return menuIcon;
     }
 
-    public void setMenu_icon(String menu_icon) {
-        this.menu_icon = menu_icon;
+    public void setMenuIcon(String menuIcon) {
+        this.menuIcon = menuIcon;
     }
 
-    public String getMenu_url() {
-        return menu_url;
+    public String getMenuUrl() {
+        return menuUrl;
     }
 
-    public void setMenu_url(String menu_url) {
-        this.menu_url = menu_url;
+    public void setMenuUrl(String menuUrl) {
+        this.menuUrl = menuUrl;
     }
 
-    public String getMenu_level() {
-        return menu_level;
+    public String getMenuLevel() {
+        return menuLevel;
     }
 
-    public void setMenu_level(String menu_level) {
-        this.menu_level = menu_level;
+    public void setMenuLevel(String menuLevel) {
+        this.menuLevel = menuLevel;
     }
 
-    public String getMenu_parent_id() {
-        return menu_parent_id;
+    public String getMenuParentId() {
+        return menuParentId;
     }
 
-    public void setMenu_parent_id(String menu_parent_id) {
-        this.menu_parent_id = menu_parent_id;
+    public void setMenuParentId(String menuParentId) {
+        this.menuParentId = menuParentId;
     }
 
     @Override
     public String toString() {
         return "Menu{" +
                 "id='" + id + '\'' +
-                ", menu_name='" + menu_name + '\'' +
-                ", menu_icon='" + menu_icon + '\'' +
-                ", menu_url='" + menu_url + '\'' +
-                ", menu_level='" + menu_level + '\'' +
-                ", menu_parent_id='" + menu_parent_id + '\'' +
+                ", menuName='" + menuName + '\'' +
+                ", menuIcon='" + menuIcon + '\'' +
+                ", menuUrl='" + menuUrl + '\'' +
+                ", menuLevel='" + menuLevel + '\'' +
+                ", menuParentId='" + menuParentId + '\'' +
                 '}';
     }
 }

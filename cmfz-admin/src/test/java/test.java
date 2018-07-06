@@ -16,7 +16,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class test {
 
     @Test
-    public void aaa(){
+    public void aa(){
 
         ApplicationContext ac = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
 
@@ -24,14 +24,14 @@ public class test {
 //        System.out.println(md.selectOne("zs"));
 
 //        ManagerService ms = (ManagerService) ac.getBean("managerServiceImpl");
-//        System.out.println(ms.queryOne("zs","12"));
+//        System.out.println(ms.queryOne("zs","123"));
 
 //        MenuDao md = (MenuDao) ac.getBean("menuDao");
 //        System.out.println(md.selectAllFirst());
 //        System.out.println(md.selectSecond("100"));
 
 //        MenuService ms = (MenuService) ac.getBean("menuServiceImpl");
-//        System.out.println(ms.querySecond("101"));
+//        System.out.println(ms.querySecond("100"));
 //        System.out.println(ms.queryAllFirst());
 
 //        PictureDao pd = (PictureDao) ac.getBean("pictureDao");
@@ -42,5 +42,9 @@ public class test {
 
 //        PictureService ps = (PictureService) ac.getBean("pictureServiceImpl");
 //        System.out.println(ps.queryAll(1,1));
+
+//        Picture p = new Picture("200");
+//        p.setPictureStatus("aaa");
+//        System.out.println(ps.modify(p));
     }
 }

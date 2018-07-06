@@ -20,22 +20,23 @@ import java.util.UUID;
  * Created by 姚亚博 on 2018/7/5.
  */
 @Controller
-@RequestMapping("picture")
+@RequestMapping("/picture")
 public class PictureController {
 
     @Autowired
     private PictureService ps;
 
-    @RequestMapping("showAll")
+    @RequestMapping("/showAll")
     @ResponseBody
     public List<Picture> showAll(@RequestParam("page")int nowPage, @RequestParam("rows")int pageSize){
-        System.out.println(pageSize    );
+
         return ps.queryAll(nowPage,pageSize) ;
     }
 
-    @RequestMapping("upload")
-    public void uplod(MultipartFile myFile, HttpServletRequest request,String picture_description,String picture_status) throws IOException {
-
+    @RequestMapping("/upload")
+    public void uplod(MultipartFile myFile, HttpServletRequest request,String pictureDescription,String pictureStatus) throws IOException {
+        System.out.println("aaa");
+        System.out.println(myFile);
 
         String realPath = request.getRealPath("").replace("cmfz","upload");
 
@@ -54,21 +55,40 @@ public class PictureController {
         //获取上传时间
         Date date = new Date();
 
-        Picture picture  = new Picture(ID,fileName,date,picture_description,picture_status);
+        Picture picture = new Picture();
+        picture.setPictureDate(date);
+        picture.setPictureId(ID);
+        picture.setPicturePath(fileName);
+        picture.setPictureDescription(pictureDescription);
+        picture.setPictureStatus(pictureStatus);
+
+        System.out.println(picture);
 
         ps.add(picture);
     }
 
-    @RequestMapping("remove")
+    @RequestMapping("/remove")
     public int remove(String id){
         return ps.remove(id);
     }
 
-    @RequestMapping("modify")
-    public void modify(String picture_id, String picture_path, Date picture_date, String picture_description, String picture_status){
+
+    /**
+     * springmvc 400 错误 类型转换异常产生的
+     * 1. springmvc默认支持处理的日期 2017/06/23
+     * 2. 属性命名符合要求
+     * 3. /modify.jsp
+     * 4. @JsonField 响应的日期格式
+     *    @DateTimeFormatter 请求的日期格式（yyyy-MM-dd HH:mm:ss）
+     *
+     */
+    @RequestMapping("/modify")
+    public void modify(Picture picture){
+        ps.modify(picture);
+    }
+    /*public void modify(String picture_id, String picture_path, Date picture_date, String picture_description, String picture_status){
         Picture picture = new Picture(picture_id,picture_path,picture_date,picture_description,picture_status);
         ps.modify(picture);
-//        return 0;
-    }
+    }*/
 
 }

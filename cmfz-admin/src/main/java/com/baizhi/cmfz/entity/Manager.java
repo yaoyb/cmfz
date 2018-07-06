@@ -5,45 +5,45 @@ package com.baizhi.cmfz.entity;
  * Created by 姚亚博 on 2018/7/4.
  */
 public class Manager {
-    private String mgr_id;
-    private String mgr_name;
-    private String mgr_pwd;
+    private String mgrId;
+    private String mgrName;
+    private String mgrPwd;
     private String salt;
-    private String mgr_status;
+    private String mgrStatus;
 
     public Manager() {
     }
 
-    public Manager(String mgr_id, String mgr_name, String mgr_pwd, String salt, String mgr_status) {
-        this.mgr_id = mgr_id;
-        this.mgr_name = mgr_name;
-        this.mgr_pwd = mgr_pwd;
+    public Manager(String mgrId, String mgrName, String mgrPwd, String salt, String mgrStatus) {
+        this.mgrId = mgrId;
+        this.mgrName = mgrName;
+        this.mgrPwd = mgrPwd;
         this.salt = salt;
-        this.mgr_status = mgr_status;
+        this.mgrStatus = mgrStatus;
     }
 
-    public String getMgr_id() {
-        return mgr_id;
+    public String getMgrId() {
+        return mgrId;
     }
 
-    public void setMgr_id(String mgr_id) {
-        this.mgr_id = mgr_id;
+    public void setMgrId(String mgrId) {
+        this.mgrId = mgrId;
     }
 
-    public String getMgr_name() {
-        return mgr_name;
+    public String getMgrName() {
+        return mgrName;
     }
 
-    public void setMgr_name(String mgr_name) {
-        this.mgr_name = mgr_name;
+    public void setMgrName(String mgrName) {
+        this.mgrName = mgrName;
     }
 
-    public String getMgr_pwd() {
-        return mgr_pwd;
+    public String getMgrPwd() {
+        return mgrPwd;
     }
 
-    public void setMgr_pwd(String mgr_pwd) {
-        this.mgr_pwd = mgr_pwd;
+    public void setMgrPwd(String mgrPwd) {
+        this.mgrPwd = mgrPwd;
     }
 
     public String getSalt() {
@@ -54,22 +54,22 @@ public class Manager {
         this.salt = salt;
     }
 
-    public String getMgr_status() {
-        return mgr_status;
+    public String getMgrStatus() {
+        return mgrStatus;
     }
 
-    public void setMgr_status(String mgr_status) {
-        this.mgr_status = mgr_status;
+    public void setMgrStatus(String mgrStatus) {
+        this.mgrStatus = mgrStatus;
     }
 
     @Override
     public String toString() {
         return "Manager{" +
-                "mgr_id='" + mgr_id + '\'' +
-                ", mgr_name='" + mgr_name + '\'' +
-                ", mgr_pwd='" + mgr_pwd + '\'' +
+                "mgrId='" + mgrId + '\'' +
+                ", mgrName='" + mgrName + '\'' +
+                ", mgrPwd='" + mgrPwd + '\'' +
                 ", salt='" + salt + '\'' +
-                ", mgr_status='" + mgr_status + '\'' +
+                ", mgrStatus='" + mgrStatus + '\'' +
                 '}';
     }
 }

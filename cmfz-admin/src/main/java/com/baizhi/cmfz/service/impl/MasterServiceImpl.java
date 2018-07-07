@@ -33,6 +33,17 @@ public class MasterServiceImpl implements MasterService {
     }
 
     @Override
+    public Integer queryTotal() {
+        return md.selectTotal();
+    }
+
+    @Override
+    public Integer queryTotalByName(String name) {
+        String likeName = "%"+name+"%";
+        return md.selectTotalByName(name);
+    }
+
+    @Override
     public int modify(Master master) {
         return md.updata(master);
     }

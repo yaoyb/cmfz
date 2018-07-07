@@ -12,6 +12,8 @@ public interface PictureDao {
 
     public List<Picture> selectAll(@Param("begin")int begin, @Param("size")int size);
 
+    public Integer selectTotal();
+
     public int updata(@Param("picture")Picture picture);
 
     public int delete(@Param("id")String id);

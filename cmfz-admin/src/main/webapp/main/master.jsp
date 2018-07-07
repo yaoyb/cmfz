@@ -20,6 +20,14 @@
 					return "<a class=\"easyui-linkbutton\" data-options=\"height:20,iconCls:'icon-edit'\" onclick=\"chang()\" >修改</a>";
                 }}
 			]],
+            view: detailview,
+            detailFormatter: function(rowIndex, rowData){
+                return '<table><tr>' +
+                    '<td rowspan=2 style="border:0"><img src="${pageContext.request.contextPath}/upload/' + rowData.masterPhoto + '" <!--style="height:150px;width:150px"--></td>' +
+                    '<td style="border:0">' +
+                    '</td>' +
+                    '</tr></table>';
+            },
             onLoadSuccess:function () {
                 $.parser.parse();
             }
@@ -53,7 +61,12 @@
 		$("#masterAddMore").linkbutton({
 			iconCls:'icon-add',
 			onClick:function () {
-
+                $("#masterChange").dialog({
+                    width:400,
+                    height:300,
+                    title:"批量添加上师信息",
+                    href:"${pageContext.request.contextPath}/main/importMaster.jsp",
+                });
             },
 		});
 	});

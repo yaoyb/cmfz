@@ -1,12 +1,16 @@
 package com.baizhi.cmfz.entity;
 
+import cn.afterturn.easypoi.excel.annotation.Excel;
+
 /**
  * Created by 姚亚博 on 2018/7/6.
  */
 public class Master {
     private String masterId;
+    @Excel(name="上师姓名",orderNum = "1",needMerge = true)
     private String masterName;
     private String masterPhoto;
+    @Excel(name="上师简介",orderNum = "2",needMerge = true)
     private String masterSummary;
 
     public Master() {

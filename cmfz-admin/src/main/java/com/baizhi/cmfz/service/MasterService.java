@@ -12,6 +12,10 @@ public interface MasterService {
 
     public List<Master> queryByName(int nowPage,int pageSize,String name);
 
+    public Integer queryTotal();
+
+    public Integer queryTotalByName(String name);
+
     public int modify(Master master);
 
     public int add(Master master);

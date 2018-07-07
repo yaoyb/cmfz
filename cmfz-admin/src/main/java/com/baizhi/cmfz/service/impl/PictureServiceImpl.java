@@ -26,6 +26,11 @@ public class PictureServiceImpl implements PictureService {
     }
 
     @Override
+    public Integer queryTotal() {
+        return pd.selectTotal();
+    }
+
+    @Override
     public int remove(String id) {
         return pd.delete(id);
     }

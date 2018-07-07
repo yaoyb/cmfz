@@ -14,6 +14,13 @@
          select * from picture  LIMIT #{begin}, #{size}
      </select>
 
+    <select id="selectTotal" resultType="Integer">
+        SELECT
+        COUNT(*)
+        FROM
+        picture
+    </select>
+
     <insert id="insert">
         INSERT INTO picture VALUES(
             #{picture.pictureId},

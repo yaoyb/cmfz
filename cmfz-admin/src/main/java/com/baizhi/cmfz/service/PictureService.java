@@ -12,6 +12,8 @@ public interface PictureService {
 
     public List<Picture> queryAll(int nowPage,int pageSize);
 
+    public Integer queryTotal();
+
     public int remove(String id);
 
     public int modify(Picture picture);

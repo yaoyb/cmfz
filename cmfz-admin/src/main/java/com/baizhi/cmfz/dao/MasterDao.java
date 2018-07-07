@@ -13,6 +13,10 @@ public interface MasterDao {
 
     public List<Master> selectByName(@Param("begin")int begin,@Param("size")int size,@Param("name")String name);
 
+    public Integer selectTotal();
+
+    public Integer selectTotalByName(@Param("name")String name);
+
     public int insert(@Param("master")Master master);
 
     public int updata(@Param("master")Master master);

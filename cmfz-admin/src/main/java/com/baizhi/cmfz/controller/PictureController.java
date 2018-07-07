@@ -12,9 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * Created by 姚亚博 on 2018/7/5.
@@ -28,9 +26,11 @@ public class PictureController {
 
     @RequestMapping("/showAll")
     @ResponseBody
-    public List<Picture> showAll(@RequestParam("page")int nowPage, @RequestParam("rows")int pageSize){
-
-        return ps.queryAll(nowPage,pageSize) ;
+    public Map<String,Object> showAll(@RequestParam("page")int nowPage, @RequestParam("rows")int pageSize){
+        Map<String,Object> map = new HashMap<String,Object>();
+        map.put("total",ps.queryTotal());
+        map.put("rows",ps.queryAll(nowPage,pageSize));
+        return map;
     }
 
     @RequestMapping("/upload")

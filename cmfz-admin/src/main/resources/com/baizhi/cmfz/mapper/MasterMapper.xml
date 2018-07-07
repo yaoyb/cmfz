@@ -13,6 +13,22 @@
         select * from master LIMIT #{begin},#{size}
     </select>
 
+    <select id="selectTotal" resultType="Integer">
+        SELECT
+        COUNT(*)
+        FROM
+        master
+    </select>
+
+    <select id="selectTotalByName" resultType="Integer">
+        SELECT
+        COUNT(*)
+        FROM
+        `master`
+        WHERE
+        master_name LIKE #{name}
+    </select>
+
     <select id="selectByName" resultMap="masterMap">
         select * from master
         where master_name like #{name}

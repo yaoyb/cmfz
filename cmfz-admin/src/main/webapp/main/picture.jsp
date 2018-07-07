@@ -54,7 +54,6 @@
 
     });
     function modfiy() {
-        var selected = $("#dg").datagrid("getSelected");
 		$("#change").dialog({
             width:400,
             height:300,
@@ -62,6 +61,7 @@
 			href:"${pageContext.request.contextPath}/main/change.jsp",
 
             onLoad:function(){
+                var selected = $("#dg").datagrid("getSelected");
                 $("#changeForm").form("load",selected); //在加载表单时将行数据加载到表单元素中
             }
 

@@ -35,8 +35,6 @@ public class PictureController {
 
     @RequestMapping("/upload")
     public void uplod(MultipartFile myFile, HttpServletRequest request,String pictureDescription,String pictureStatus) throws IOException {
-        System.out.println("aaa");
-        System.out.println(myFile);
 
         String realPath = request.getRealPath("").replace("cmfz","upload");
 

@@ -22,7 +22,6 @@
 			success:function (menuList) {
 
 				$.each(menuList,function (index,value) {
-
                     var firstcontent="";
 
 					$.ajax({
@@ -33,16 +32,16 @@
 						success:function (data) {
                             firstcontent+="<ul>";
                             $.each(data,function (num,second) {
-                                firstcontent+="<li style=\"list-style-type:none;\"><a class=\"easyui-linkbutton\" data-options=\"plain:true,iconCls:'"+second.menu_icon+"'\" onclick=\"addpage('"+second.menu_name+"','"+second.menu_url+"')\">"+second.menu_name+"</a></li>";
+                                firstcontent+="<li style=\"list-style-type:none;\"><a class=\"easyui-linkbutton\" data-options=\"plain:true,iconCls:'"+second.menuIcon+"'\" onclick=\"addpage('"+second.menuName+"','"+second.menuUrl+"')\">"+second.menuName+"</a></li>";
                             });
                             firstcontent+="</ul>";
                         }
 					});
 
                     $("#aa").accordion('add',{
-                        title: value.menu_name,
+                        title: value.menuName,
                         content: firstcontent,
-						iconCls:value.menu_icon,
+						iconCls:value.menuIcon,
                         selected: false
                     });
                 })

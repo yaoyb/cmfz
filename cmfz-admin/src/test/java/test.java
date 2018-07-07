@@ -1,8 +1,11 @@
 import com.baizhi.cmfz.dao.ManagerDao;
+import com.baizhi.cmfz.dao.MasterDao;
 import com.baizhi.cmfz.dao.MenuDao;
 import com.baizhi.cmfz.dao.PictureDao;
+import com.baizhi.cmfz.entity.Master;
 import com.baizhi.cmfz.entity.Picture;
 import com.baizhi.cmfz.service.ManagerService;
+import com.baizhi.cmfz.service.MasterService;
 import com.baizhi.cmfz.service.MenuService;
 import com.baizhi.cmfz.service.PictureService;
 import com.baizhi.cmfz.service.impl.ManagerServiceImpl;
@@ -46,5 +49,17 @@ public class test {
 //        Picture p = new Picture("200");
 //        p.setPictureStatus("aaa");
 //        System.out.println(ps.modify(p));
+
+//        MasterDao md = (MasterDao) ac.getBean("masterDao");
+//        Master m = new Master("11","aa","ww","ww");
+//        System.out.println(md.updata(m));
+//        System.out.println(md.selectByName(0,2,"%爱%"));
+//        System.out.println(md.selectAll(0,2));
+
+        MasterService ms = (MasterService) ac.getBean("masterServiceImpl");
+//        System.out.println(ms.queryAll(1,2));
+//        System.out.println(ms.queryByName(1,2,"%国%"));
+
+
     }
 }

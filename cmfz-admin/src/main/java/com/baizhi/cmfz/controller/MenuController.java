@@ -1,6 +1,5 @@
 package com.baizhi.cmfz.controller;
 
-import com.alibaba.fastjson.JSON;
 import com.baizhi.cmfz.entity.Menu;
 import com.baizhi.cmfz.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +31,6 @@ public class MenuController {
     @RequestMapping("showSecond")
     @ResponseBody
     public List<Menu> showSecond(String id){
-        System.out.println(id);
         List<Menu> MenuSecond = ms.querySecond(id);
         return MenuSecond;
     }

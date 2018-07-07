@@ -34,7 +34,8 @@ public class PictureController {
     }
 
     @RequestMapping("/upload")
-    public void uplod(MultipartFile myFile, HttpServletRequest request,String pictureDescription,String pictureStatus) throws IOException {
+    @ResponseBody
+    public String uplod(MultipartFile myFile, HttpServletRequest request,String pictureDescription,String pictureStatus) throws IOException {
 
         String realPath = request.getRealPath("").replace("cmfz","upload");
 
@@ -60,16 +61,12 @@ public class PictureController {
         picture.setPictureDescription(pictureDescription);
         picture.setPictureStatus(pictureStatus);
 
-        System.out.println(picture);
-
-        ps.add(picture);
+        if( ps.add(picture)!=0){
+            return "success";
+        }else{
+            return "false";
+        }
     }
-
-    @RequestMapping("/remove")
-    public int remove(String id){
-        return ps.remove(id);
-    }
-
 
     /**
      * springmvc 400 错误 类型转换异常产生的
@@ -81,12 +78,18 @@ public class PictureController {
      *
      */
     @RequestMapping("/modify")
-    public void modify(Picture picture){
-        ps.modify(picture);
+    @ResponseBody
+    public String modify(Picture picture){
+        if(ps.modify(picture)!=0){
+            return "success";
+        }else{
+            return "false";
+        }
     }
-    /*public void modify(String picture_id, String picture_path, Date picture_date, String picture_description, String picture_status){
-        Picture picture = new Picture(picture_id,picture_path,picture_date,picture_description,picture_status);
-        ps.modify(picture);
-    }*/
+
+    @RequestMapping("/remove")
+    public int remove(String id){
+        return ps.remove(id);
+    }
 
 }

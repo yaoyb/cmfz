@@ -12,15 +12,24 @@
                         //提交数据
                         $("#addMasterForm").form("submit",{
                             url:"${pageContext.request.contextPath}/master/add.do",
-                            success:function () {
-                                $("#masterChange").dialog("close");
-                                $.messager.show({
-                                    title:"温馨提示",
-                                    msg:"添加成功，窗口2秒后关闭",
-                                    timeout:2000,
-                                    showType:"slide",
-                                });
-                                $('#masterTab').datagrid("reload",{});
+							success:function (res) {
+                                if(res=="success"){
+                                    $.messager.show({
+                                        title:"温馨提示",
+                                        msg:"添加成功，窗口2秒后关闭",
+                                        timeout:2000,
+                                        showType:"slide",
+                                    });
+                                    $("#masterChange").dialog("close");
+                                    $('#masterTab').datagrid("reload",{});
+                                }else{
+                                    $.messager.show({
+                                        title:"温馨提示",
+                                        msg:"添加失败，窗口2秒后关闭",
+                                        timeout:2000,
+                                        showType:"slide",
+                                    });
+                                }
                             }
                         })
                     }

@@ -12,12 +12,17 @@
                         //提交数据
                         $("#changeForm").form("submit",{
                             url:"${pageContext.request.contextPath}/picture/modify.do",
-                            success: function(){
-                                $.messager.alert("提交信息","更改成功！");
-                                $("#change").dialog("close");
-                                $('#dg').datagrid("reload",{});
+                            success: function(res){
+                                if(res=="success"){
+                                    $.messager.alert("提交信息","更改成功！");
+                                    $("#change").dialog("close");
+                                    $('#dg').datagrid("reload",{});
+                                }else{
+                                    $.messager.alert("提交信息","更改失败！");
+                                    $("#change").dialog("close");
+                                    $('#dg').datagrid("reload",{});
+                                }
                             },
-
                         });
                     }
                 });

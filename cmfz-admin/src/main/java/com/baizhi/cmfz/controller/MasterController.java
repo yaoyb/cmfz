@@ -34,16 +34,25 @@ public class MasterController {
     }
 
     @RequestMapping("change")
-    public void change(Master master){
-        ms.modify(master);
+    @ResponseBody
+    public String change(Master master){
+        if(ms.modify(master)!=0){
+            return "success";
+        }else{
+            return "false";
+        }
     }
 
     @RequestMapping("add")
-    public void add(Master master){
+    @ResponseBody
+    public String add(Master master){
         String ID = UUID.randomUUID().toString().replace("-","");
         master.setMasterId(ID);
-        ms.add(master);
+        if(ms.add(master)!=0){
+            return "success";
+        }else{
+            return "false";
+        }
     }
-
 
 }

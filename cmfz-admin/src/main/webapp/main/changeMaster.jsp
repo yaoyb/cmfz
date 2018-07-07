@@ -3,7 +3,6 @@
 
 
 <script type="text/javascript">
-
 	$(function(){
 		$("#hold3").linkbutton({
 			onClick:function () {
@@ -12,12 +11,17 @@
                         //提交数据
                         $("#changeMasterForm").form("submit",{
                             url:"${pageContext.request.contextPath}/master/change.do",
-                            success: function(){
-                                $.messager.alert("提交信息","更改成功！");
-                                $("#masterChange").dialog("close");
-                                $('#masterTab').datagrid("reload",{});
+                            success: function(res){
+                                if(res=="success"){
+                                    $.messager.alert("提交信息","更改成功！");
+                                    $("#masterChange").dialog("close");
+                                    $('#masterTab').datagrid("reload",{});
+								}else{
+                                    $.messager.alert("提交信息","更改失败！");
+                                    $("#masterChange").dialog("close");
+                                    $('#masterTab').datagrid("reload",{});
+                                }
                             },
-
                         });
                     }
                 });

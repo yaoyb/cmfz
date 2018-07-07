@@ -12,15 +12,26 @@
                         //提交数据
                         $("#addForm").form("submit",{
                             url:"${pageContext.request.contextPath}/picture/upload.do",
-                            success:function () {
-                                $("#change").dialog("close");
-                                $.messager.show({
-                                    title:"温馨提示",
-                                    msg:"添加成功，窗口2秒后关闭",
-                                    timeout:2000,
-                                    showType:"slide",
-                                });
-                                $('#dg').datagrid("reload",{});
+                            success:function (res) {
+                                if(res=="success"){
+                                    $.messager.show({
+                                        title:"温馨提示",
+                                        msg:"添加成功，窗口2秒后关闭",
+                                        timeout:2000,
+                                        showType:"slide",
+                                    });
+                                    $("#change").dialog("close");
+                                    $('#dg').datagrid("reload",{});
+                                }else{
+                                    $.messager.show({
+                                        title:"温馨提示",
+                                        msg:"添加失败，窗口2秒后关闭",
+                                        timeout:2000,
+                                        showType:"slide",
+                                    });
+                                    $("#change").dialog("close");
+                                    $('#dg').datagrid("reload",{});
+                                }
                             }
                         })
                     }

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "../mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.cmfz.dao.OperationDao">
+     <resultMap id="operationMap" type="Operation">
+         <id property="operationId" column="operation_id" ></id>
+         <result property="operationTime" column="operation_time"></result>
+         <result property="operationResource" column="operation_resource"></result>
+         <result property="operationAction" column="operation_action"></result>
+         <result property="operationMassage" column="operation_massage"></result>
+         <result property="operationResult" column="operation_result"></result>
+         <association property="manager" javaType="Manager">
+             <id property="mgrId" column="mgr_id" ></id>
+             <result property="mgrName" column="mgr_name"></result>
+             <result property="mgrPwd" column="mgr_pwd"></result>
+             <result property="salt" column="salt"></result>
+             <result property="mgrStatus" column="mgr_status"></result>
+         </association>
+     </resultMap>
+
+    <select id="selectAll" resultMap="operationMap">
+
+    </select>
+
+    <insert id="insert">
+        INSERT INTO operation VALUES(
+            #{operation.operation_id},
+            #{operation.operation_time},
+            #{operation.operation_resource},
+            #{operation.operation_action},
+            #{operation.operation_massage},
+            #{operation.operation_result},
+            #{operation.manager.mgr_id}
+        )
+    </insert>
+</mapper>

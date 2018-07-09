@@ -23,6 +23,10 @@ public class test {
 
         ApplicationContext ac = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
 
+        Master m = new Master("200","aa","ss","dd");
+        MasterService ms = (MasterService) ac.getBean("masterServiceImpl");
+        System.out.println(ms.add(m));
+
 //        ManagerDao md = (ManagerDao) ac.getBean("managerDao");
 //        System.out.println(md.selectOne("zs"));
 
@@ -56,7 +60,7 @@ public class test {
 //        System.out.println(md.selectByName(0,2,"%爱%"));
 //        System.out.println(md.selectAll(0,2));
 
-        MasterService ms = (MasterService) ac.getBean("masterServiceImpl");
+//        MasterService ms = (MasterService) ac.getBean("masterServiceImpl");
 //        System.out.println(ms.queryAll(1,2));
 //        System.out.println(ms.queryByName(1,2,"%国%"));
 

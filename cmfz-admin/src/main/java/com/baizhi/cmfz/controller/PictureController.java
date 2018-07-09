@@ -36,7 +36,7 @@ public class PictureController {
     @RequestMapping("/upload")
     @ResponseBody
     public String uplod(MultipartFile myFile, HttpServletRequest request,String pictureDescription,String pictureStatus) throws IOException {
-
+        System.out.println(myFile);
         String realPath = request.getRealPath("").replace("cmfz","upload");
 
         //获取上传文件的文件名

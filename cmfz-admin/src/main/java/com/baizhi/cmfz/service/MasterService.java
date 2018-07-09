@@ -16,6 +16,8 @@ public interface MasterService {
 
     public Integer queryTotalByName(String name);
 
+    public List<Master> queryExcel();
+
     public int modify(Master master);
 
     public int add(Master master);

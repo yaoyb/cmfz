@@ -52,6 +52,7 @@
 			    iconCls:"icon-search",
 				handler:function (e) {
 					$("#masterTab").datagrid({
+
                         url:"${pageContext.request.contextPath}/master/showByName.do?name="+$('#search').val(),
 					});
                 }
@@ -67,6 +68,13 @@
                     title:"批量添加上师信息",
                     href:"${pageContext.request.contextPath}/main/importMaster.jsp",
                 });
+            },
+		});
+
+		$("#exportMaster").linkbutton({
+			iconCls:'icon-export',
+			onClick:function () {
+                location.href="${pageContext.request.contextPath}/master/exportMaster.do";
             },
 		});
 	});
@@ -92,6 +100,7 @@
 		<input id="search" style="margin-right: 10px"/>
 		<a href="#" id="masterAdd" >新增上师</a>
 		<a href="#" id="masterAddMore" >批量添加上师</a>
+		<a href="#" id="exportMaster" >导出上师文件</a>
 	</table>
 	<div id="masterChange" ></div>
 </div>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "../mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.cmfz.dao.ArticleDao">
+
+    <insert id="insert">
+        INSERT INTO article
+        VALUES
+        (
+            #{article.articleId},
+            #{article.articleName},
+            #{article.articleContent},
+            #{article.articleDate},
+            #{article.articlePic},
+            #{article.master.masterId}
+        )
+    </insert>
+
+
+</mapper>

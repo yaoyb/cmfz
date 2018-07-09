@@ -35,6 +35,10 @@
         LIMIT #{begin},#{size}
     </select>
 
+    <select id="selectByExcel" resultMap="masterMap">
+        select * from master
+    </select>
+
     <insert id="insert">
         INSERT INTO master
         VALUES

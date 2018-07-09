@@ -9,8 +9,8 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     
 	<link rel="icon" href="img/favicon.ico" type="image/x-icon" />
-	<link rel="stylesheet" href="css/common.css" type="text/css"></link>
-	<link rel="stylesheet" href="css/login.css" type="text/css"></link>
+	<link rel="stylesheet" href="css/common.css" type="text/css"/>
+	<link rel="stylesheet" href="css/login.css" type="text/css"/>
 	<script type="text/javascript" src="script/jquery.js"></script>
 	<script type="text/javascript" src="script/common.js"></script>
 	<script type="text/javascript">
@@ -20,13 +20,6 @@
             var str = "${cookie.name.value}";
             var newStr = decodeURI(str);
             $("#name").val(newStr);
-
-			//点击更换验证码：
-			/*$("#captchaImage").click(function(){//点击更换验证码
-				alert("自己做");
-			});*/
-			
-			//  form 表单提交
 
             $("#loginForm").bind("submit",function(){
                 var name=$("#name").val();

@@ -44,6 +44,11 @@ public class MasterServiceImpl implements MasterService {
     }
 
     @Override
+    public List<Master> queryExcel() {
+        return md.selectByExcel();
+    }
+
+    @Override
     public int modify(Master master) {
         return md.updata(master);
     }

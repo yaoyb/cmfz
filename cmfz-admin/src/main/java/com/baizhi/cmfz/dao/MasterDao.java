@@ -17,6 +17,8 @@ public interface MasterDao {
 
     public Integer selectTotalByName(@Param("name")String name);
 
+    public List<Master> selectByExcel();
+
     public int insert(@Param("master")Master master);
 
     public int updata(@Param("master")Master master);

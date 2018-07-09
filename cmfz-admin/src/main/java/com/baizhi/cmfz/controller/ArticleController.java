@@ -48,6 +48,7 @@ public class ArticleController {
     @RequestMapping("/upload")
     @ResponseBody
     public Rich uploadFiles(@RequestParam("files") MultipartFile[] files, HttpServletRequest request){
+        //用于返回文件内容在编辑框中
         Rich rich = new Rich();
         ArrayList<String> data =new ArrayList<String>();
         try {

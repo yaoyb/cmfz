@@ -121,7 +121,6 @@
         ]
     };
     myChart.setOption(option);
-
     /*$(function () {
         $.post("/cmfzms_gaozhy/statistics/distribution1", function (data) {
             console.log(data);

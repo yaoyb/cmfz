@@ -1,12 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 		 pageEncoding="utf-8" isELIgnored="false" %>
 <!-- 注意， 只需要引用 JS，无需引用任何 CSS ！！！-->
+<!--导入angEditor的相关js-->
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/wangEditor.js"></script>
 <script type="text/javascript">
     var E = window.wangEditor;
     var editor = new E('#editor');
-    // 或者 var editor = new E( document.getElementById('editor') )
+	//图片上传的url
     editor.customConfig.uploadImgServer = '${pageContext.request.contextPath}/article/upload.do';
+    //上传的文件的name，与Controller中用于上传文件的方法中的参数一致
     editor.customConfig.uploadFileName = 'files';
     editor.create();
 

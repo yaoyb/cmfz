@@ -20,7 +20,13 @@ public class OperationServiceImpl implements OperationService {
 
     @Override
     public List<Operation> queryAll(int nowPage, int pageSize) {
-        return null;
+        int begin = (nowPage-1)*pageSize;
+        return od.selectAll(begin,pageSize);
+    }
+
+    @Override
+    public Integer queryTotal() {
+        return od.selectTotal();
     }
 
 }

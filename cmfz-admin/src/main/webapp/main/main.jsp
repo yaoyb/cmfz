@@ -83,7 +83,8 @@
     </div>   
     <div data-options="region:'center'">
     	<div id="tab" class="easyui-tabs" data-options="fit:true,narrow:true,pill:true">
-		    <div title="主页" data-options="iconCls:'icon-neighbourhood',"  style="background-image:url(image/shouye.jpg);background-repeat: no-repeat;background-size:100% 100%;"></div>
+		    <div title="主页" data-options="iconCls:'icon-neighbourhood',"  style="background-image:url('${pageContext.request.contextPath}/main/image/shouye.jpg');background-repeat: no-repeat;background-size:100% 100%;"></div>
+			<%--<div style="background-image: url('image/shouye.jpg')" ></div>--%>
 		</div>  
     </div>   
 </body> 

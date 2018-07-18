@@ -11,5 +11,7 @@ import java.util.List;
 public interface OperationDao {
     public List<Operation> selectAll(@Param("begin")int begin, @Param("size")int size);
 
-    public int insert(Operation operation);
+    public int insert(@Param("operation")Operation operation);
+
+    public Integer selectTotal();
 }

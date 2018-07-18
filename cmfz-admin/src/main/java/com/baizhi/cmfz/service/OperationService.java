@@ -10,4 +10,6 @@ import java.util.List;
 public interface OperationService {
     public List<Operation> queryAll(int nowPage,int pageSize);
 
+    public Integer queryTotal();
+
 }

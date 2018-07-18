@@ -31,8 +31,9 @@ public class ManagerController {
         HttpSession session = request.getSession();
         String code = (String) session.getAttribute("code");
         if(enCode.equalsIgnoreCase(code)){
-            Manager m = (ms.queryOne(name,password));
+            Manager m = ms.queryOne(name,password);
             if(m!=null){
+                session.setAttribute("manager",m);
                 if(checkbox!=null){
                     //通过Cookie填充用户名/密码
                     name = URLEncoder.encode(name, "UTF-8");
@@ -54,7 +55,7 @@ public class ManagerController {
     @RequestMapping("/getVcode")
     public void create(HttpSession session, HttpServletResponse response) throws IOException {
 
-        NewValidateCodeUtils codes=new NewValidateCodeUtils(130, 50, 4);
+        NewValidateCodeUtils codes=new NewValidateCodeUtils(100, 40, 1);
 
         session.setAttribute("code", codes.getCode());
 

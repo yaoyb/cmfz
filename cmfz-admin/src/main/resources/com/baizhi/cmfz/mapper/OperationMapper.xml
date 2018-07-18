@@ -18,18 +18,30 @@
      </resultMap>
 
     <select id="selectAll" resultMap="operationMap">
+        SELECT
+            *
+        FROM
+            operation
+        LEFT JOIN manager ON operation.manager_id = manager.mgr_id
+        LIMIT #{begin}, #{size}
+    </select>
 
+    <select id="selectTotal" resultType="Integer">
+        SELECT
+        COUNT(*)
+        FROM
+        operation
     </select>
 
     <insert id="insert">
         INSERT INTO operation VALUES(
-            #{operation.operation_id},
-            #{operation.operation_time},
-            #{operation.operation_resource},
-            #{operation.operation_action},
-            #{operation.operation_massage},
-            #{operation.operation_result},
-            #{operation.manager.mgr_id}
+            #{operation.operationId},
+            #{operation.manager.mgrId},
+            #{operation.operationTime},
+            #{operation.operationResource},
+            #{operation.operationAction},
+            #{operation.operationMassage},
+            #{operation.operationResult}
         )
     </insert>
 </mapper>

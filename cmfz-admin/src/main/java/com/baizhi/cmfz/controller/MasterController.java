@@ -7,6 +7,11 @@ import cn.afterturn.easypoi.excel.entity.ImportParams;
 import com.baizhi.cmfz.entity.Master;
 import com.baizhi.cmfz.service.MasterService;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.csource.common.MyException;
+import org.csource.fastdfs.ClientGlobal;
+import org.csource.fastdfs.StorageClient;
+import org.csource.fastdfs.TrackerClient;
+import org.csource.fastdfs.TrackerServer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +22,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
@@ -69,7 +75,44 @@ public class MasterController {
      */
     @RequestMapping("add")
     @ResponseBody
+    public String add(Master master,@RequestParam(value = "masterFile", required = false)MultipartFile masterFile, HttpServletRequest request) throws IOException, MyException {
+        ClientGlobal.init("fdfs_client.conf");
+
+        TrackerClient trackerClient = new TrackerClient();
+
+        TrackerServer trackerServer = trackerClient.getConnection();
+
+        StorageClient storageClient = new StorageClient(trackerServer, null);
+
+        //获取后缀名
+        String fileName = masterFile.getOriginalFilename();
+        String suffix = fileName.substring(fileName.lastIndexOf(".") + 1);
+
+        String[] fileId = storageClient.upload_file(masterFile.getBytes(),suffix,null);
+
+        //拼接该文件的名称
+        String path ="";
+        for(String s:fileId){
+            path+=s;
+        }
+
+        //----------------------------------------------
+
+        System.out.println("Path:"+path);
+        String ID = UUID.randomUUID().toString().replace("-","");
+        master.setMasterId(ID);
+        master.setMasterPhoto(path);
+        if(ms.add(master)!=0){
+            return "success";
+        }else{
+            return "false";
+        }
+    }
+    /*
+    @RequestMapping("add")
+    @ResponseBody
     public String add(Master master,@RequestParam(value = "masterFile", required = false)MultipartFile masterFile, HttpServletRequest request) throws IOException {
+
         String realPath = request.getRealPath("").replace("cmfz","upload");
 
         //获取上传文件的文件名
@@ -87,6 +130,7 @@ public class MasterController {
             return "false";
         }
     }
+    */
 
     @RequestMapping("/importMaster")
     @ResponseBody

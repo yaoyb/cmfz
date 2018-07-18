@@ -2,6 +2,11 @@ package com.baizhi.cmfz.controller;
 
 import com.baizhi.cmfz.entity.Picture;
 import com.baizhi.cmfz.service.PictureService;
+import org.csource.common.MyException;
+import org.csource.fastdfs.ClientGlobal;
+import org.csource.fastdfs.StorageClient;
+import org.csource.fastdfs.TrackerClient;
+import org.csource.fastdfs.TrackerServer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
@@ -35,8 +41,54 @@ public class PictureController {
 
     @RequestMapping("/upload")
     @ResponseBody
+    public String uplod(MultipartFile myFile, HttpServletRequest request,String pictureDescription,String pictureStatus) throws IOException, MyException {
+
+        ClientGlobal.init("fdfs_client.conf");
+
+        TrackerClient trackerClient = new TrackerClient();
+
+        TrackerServer trackerServer = trackerClient.getConnection();
+
+        StorageClient storageClient = new StorageClient(trackerServer, null);
+
+        //获取后缀名
+        String fileName = myFile.getOriginalFilename();
+        String suffix = fileName.substring(fileName.lastIndexOf(".") + 1);
+
+        String[] fileId = storageClient.upload_file(myFile.getBytes(),suffix,null);
+
+        //拼接该文件的名称
+        String path ="";
+        for(String s:fileId){
+            path+=s;
+        }
+
+        //----------------------------
+
+        //生成UUID作为Picture对象的ID
+        String ID = UUID.randomUUID().toString().replace("-","");
+
+        //获取上传时间
+        Date date = new Date();
+
+        Picture picture = new Picture();
+        picture.setPictureDate(date);
+        picture.setPictureId(ID);
+        picture.setPicturePath(path);
+        picture.setPictureDescription(pictureDescription);
+        picture.setPictureStatus(pictureStatus);
+
+        if( ps.add(picture)!=0){
+            return "success";
+        }else{
+            return "false";
+        }
+
+    }
+
+    /*
     public String uplod(MultipartFile myFile, HttpServletRequest request,String pictureDescription,String pictureStatus) throws IOException {
-        System.out.println(myFile);
+
         String realPath = request.getRealPath("").replace("cmfz","upload");
 
         //获取上传文件的文件名
@@ -67,6 +119,7 @@ public class PictureController {
             return "false";
         }
     }
+    */
 
     /**
      * springmvc 400 错误 类型转换异常产生的

@@ -74,7 +74,7 @@
 							<th>验证码:</th>
 							<td>
 								<input type="text" id="enCode" name="enCode" class="text captcha" maxlength="4" autocomplete="off"/>
-								<img id="captchaImage" class="captchaImage" onclick="document.getElementById('captchaImage').src='vcode.do?time-'+(new Date()).getTime();" src="/cmfz/manager/getVcode.do" title="点击更换验证码"/>
+								<img id="captchaImage" class="captchaImage" onclick="document.getElementById('captchaImage').src='/cmfz/manager/getVcode.do?time-'+(new Date()).getTime();" src="/cmfz/manager/getVcode.do" title="点击更换验证码"/>
 							</td>
 						</tr>					
 					<tr>

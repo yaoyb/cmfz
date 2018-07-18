@@ -29,11 +29,11 @@
                 {field:'pictureStatus',title:'状态',width:100,align:'center'},
                 {field:'status',title:'操作',width:100,align:'center',formatter:function(value,row,index){
                     //$("#del").linkbutton({});
-                    return "<a class=\"easyui-linkbutton\" data-options=\"height:20,iconCls:'icon-edit'\" onClick=\"modfiy()\">修改</a>";
+                    return "<a name=\"dgA\" class=\"easyui-linkbutton\" data-options=\"height:20,iconCls:'icon-edit'\" onClick=\"modfiy()\">修改</a>";
                 }}
             ]],
 			onLoadSuccess:function () {
-				$.parser.parse();
+				$("a[name='dgA']").linkbutton({});
             }
         });
 

@@ -17,7 +17,7 @@
                 {field:'masterPhoto',title:"上师图片",width:228,align:'center'},
                 {field:'masterSummary',title:"上师简介",width:228,align:'center'},
 				{field:'operation',title:"操作",width:228,align:'center',formatter:function (value,row,index) {
-					return "<a class=\"easyui-linkbutton\" data-options=\"height:20,iconCls:'icon-edit'\" onclick=\"chang()\" >修改</a>";
+					return "<a name=\"masterTabA\" class=\"easyui-linkbutton\" data-options=\"height:20,iconCls:'icon-edit'\" onclick=\"chang()\" >修改</a>";
                 }}
 			]],
             view: detailview,
@@ -29,7 +29,7 @@
                     '</tr></table>';
             },
             onLoadSuccess:function () {
-                $.parser.parse();
+                $("a[name='masterTabA']").linkbutton({});
             }
 		});
 

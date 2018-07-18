@@ -1,7 +1,4 @@
-import com.baizhi.cmfz.dao.ManagerDao;
-import com.baizhi.cmfz.dao.MasterDao;
-import com.baizhi.cmfz.dao.MenuDao;
-import com.baizhi.cmfz.dao.PictureDao;
+import com.baizhi.cmfz.dao.*;
 import com.baizhi.cmfz.entity.Master;
 import com.baizhi.cmfz.entity.Picture;
 import com.baizhi.cmfz.service.ManagerService;
@@ -13,6 +10,8 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.Date;
+
 /**
  * Created by 姚亚博 on 2018/7/4.
  */
@@ -23,9 +22,12 @@ public class test {
 
         ApplicationContext ac = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
 
-        Master m = new Master("200","aa","ss","dd");
-        MasterService ms = (MasterService) ac.getBean("masterServiceImpl");
-        System.out.println(ms.add(m));
+//        OperationDao od = (OperationDao) ac.getBean("operationDao");
+//        System.out.println(od.selectAll(1,1));
+
+//        Master m = new Master("200","aa","ss","dd");
+//        MasterService ms = (MasterService) ac.getBean("masterServiceImpl");
+//        System.out.println(ms.add(m));
 
 //        ManagerDao md = (ManagerDao) ac.getBean("managerDao");
 //        System.out.println(md.selectOne("zs"));
@@ -50,7 +52,8 @@ public class test {
 //        PictureService ps = (PictureService) ac.getBean("pictureServiceImpl");
 //        System.out.println(ps.queryAll(1,1));
 
-//        Picture p = new Picture("200");
+//        Picture p = new Picture("200","aaa",new Date(),"aaa","aaa");
+//        System.out.println(ps.add(p));
 //        p.setPictureStatus("aaa");
 //        System.out.println(ps.modify(p));
 
@@ -60,7 +63,8 @@ public class test {
 //        System.out.println(md.selectByName(0,2,"%爱%"));
 //        System.out.println(md.selectAll(0,2));
 
-//        MasterService ms = (MasterService) ac.getBean("masterServiceImpl");
+        MasterService ms = (MasterService) ac.getBean("masterServiceImpl");
+        System.out.println(ms.add(new Master("a9999","a","a","a")));
 //        System.out.println(ms.queryAll(1,2));
 //        System.out.println(ms.queryByName(1,2,"%国%"));
 
